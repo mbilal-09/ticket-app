@@ -1,4 +1,6 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/constants/constants.dart';
 import 'package:ticket_app/styles/app_styles.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -6,42 +8,53 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Good Morning',
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      'Book Tickets',
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: AppStyles.textColor,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ],
+                Text(
+                  'Good Morning',
+                  style: AppStyles.textStyles['h17'],
                 ),
-                Container(
-                  width: 100,
-                  height: 70,
-                  color: Colors.red,
+                const SizedBox(height: 5),
+                Text(
+                  'Book Tickets',
+                  style: AppStyles.textStyles['h26'],
                 ),
               ],
             ),
-            const Row(
-              children: [],
+            Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: AppColors.lightBgColor,
+                  image:
+                      const DecorationImage(image: AssetImage(AppImages.logo))),
             ),
           ],
-        ));
+        ),
+        const SizedBox(height: 15),
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.lightBgColor,
+          ),
+          child: Row(
+            children: [
+              const Icon(FluentSystemIcons.ic_fluent_search_regular,
+                  color: AppColors.textColor),
+              const SizedBox(width: 10),
+              Text('Search', style: AppStyles.textStyles['h17'])
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

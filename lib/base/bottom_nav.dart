@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/constants/constants.dart';
 import 'package:ticket_app/screens/home_screen.dart';
 
 class BottomNav extends StatefulWidget {
@@ -30,14 +31,15 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blueAccent,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: AppColors.textColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         onTap: _onBottomTap,
         currentIndex: _selectedIndex,
         items: const [
           BottomNavigationBarItem(
+            backgroundColor: AppColors.lightBgColor,
             icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
             activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
             label: "Home",
