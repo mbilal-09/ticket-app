@@ -6,13 +6,20 @@ import 'package:ticket_app/base/widgets/ticket_cut_circle.dart';
 import 'package:ticket_app/constants/constants.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  const TicketView({super.key, required this.ticket, this.margin = 15});
+
+  final Map<String, dynamic> ticket;
+  final double margin;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return SizedBox(
+      height: 168,
+      width: size.width * 0.90,
       child: Container(
-        margin: const EdgeInsets.only(right: 15),
+        margin: EdgeInsets.only(right: margin),
         child: Column(
           children: [
             Container(
@@ -27,8 +34,10 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const ExpandedText(
-                          text: 'NYC', align: TextAlign.left, fontSize: 17),
+                      ExpandedText(
+                          text: ticket['from']['code'],
+                          align: TextAlign.left,
+                          fontSize: 17),
                       const SizedBox(width: 50),
                       const TicketDot(),
                       Expanded(
@@ -51,19 +60,24 @@ class TicketView extends StatelessWidget {
                       )),
                       const TicketDot(),
                       const SizedBox(width: 50),
-                      const ExpandedText(
-                          text: 'LDN', align: TextAlign.right, fontSize: 17),
+                      ExpandedText(
+                          text: ticket['to']['code'],
+                          align: TextAlign.right,
+                          fontSize: 17),
                     ],
                   ),
                   const SizedBox(
                     height: 3,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ExpandedText(text: 'New-York', align: TextAlign.left),
-                      ExpandedText(text: '8H 30M', align: TextAlign.center),
-                      ExpandedText(text: 'London', align: TextAlign.right),
+                      ExpandedText(
+                          text: ticket['from']['name'], align: TextAlign.left),
+                      ExpandedText(
+                          text: ticket['flying_time'], align: TextAlign.center),
+                      ExpandedText(
+                          text: ticket['to']['name'], align: TextAlign.right),
                     ],
                   ),
                 ],
@@ -103,25 +117,29 @@ class TicketView extends StatelessWidget {
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20)),
               ),
-              child: const Column(
+              child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ExpandedText(
-                          text: '1 MAY', align: TextAlign.left, fontSize: 17),
+                          text: ticket['date'],
+                          align: TextAlign.left,
+                          fontSize: 17),
                       ExpandedText(
-                          text: '08:00 AM',
+                          text: ticket['departure_time'],
                           align: TextAlign.center,
                           fontSize: 17),
                       ExpandedText(
-                          text: '23', align: TextAlign.right, fontSize: 17),
+                          text: '${ticket['number']}',
+                          align: TextAlign.right,
+                          fontSize: 17),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 3,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ExpandedText(text: 'Date', align: TextAlign.left),

@@ -6,6 +6,10 @@ class AppImages {
   static const String _imagePath = 'assets/images';
 
   static const String logo = '$_imagePath/logo.png';
+  static const String hotel = '$_imagePath/hotel_room.png';
+  static const String hotel1 = '$_imagePath/hotel_room_1.png';
+  static const String cityView = '$_imagePath/city_view.png';
+  static const String poolView = '$_imagePath/pool_view.png';
 }
 
 class AppColors {

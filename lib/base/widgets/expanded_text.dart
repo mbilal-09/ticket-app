@@ -4,7 +4,7 @@ import 'package:ticket_app/styles/app_styles.dart';
 
 class ExpandedText extends StatelessWidget {
   const ExpandedText(
-      {super.key, required this.text, required this.align, this.fontSize = 14});
+      {super.key, required this.text, required this.align, this.fontSize = 12});
 
   final String text;
   final TextAlign align;
