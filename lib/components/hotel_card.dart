@@ -3,18 +3,20 @@ import 'package:ticket_app/constants/constants.dart';
 import 'package:ticket_app/styles/app_styles.dart';
 
 class HotelCard extends StatelessWidget {
-  const HotelCard({super.key, required this.hotel});
+  const HotelCard({super.key, required this.hotel, this.width = 0.6, this.marginRight = 15});
 
   final Map<String, dynamic> hotel;
+  final double width;
+  final double marginRight;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      width: size.width * 0.6,
+      width: size.width * width,
       height: 300,
-      margin: const EdgeInsets.only(right: 15),
+      margin: EdgeInsets.only(right: marginRight),
       decoration: BoxDecoration(
           color: AppColors.lightBgColor,
           borderRadius: BorderRadius.circular(10)),

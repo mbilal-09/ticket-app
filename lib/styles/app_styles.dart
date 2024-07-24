@@ -3,6 +3,11 @@ import 'package:ticket_app/constants/constants.dart';
 
 class AppStyles {
   static Map<String, TextStyle> textStyles = {
+    'h35': const TextStyle(
+      fontSize: 35,
+      fontWeight: FontWeight.w600,
+      color: AppColors.whiteColor,
+    ),
     'h26': const TextStyle(
       fontSize: 26,
       fontWeight: FontWeight.w600,

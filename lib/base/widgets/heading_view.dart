@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/screens/ticket_screen.dart';
 import 'package:ticket_app/styles/app_styles.dart';
 
 class AppHeadingViewAll extends StatelessWidget {
