@@ -15,6 +15,7 @@ class ExpandedText extends StatelessWidget {
     return Expanded(
         child: Text(
       text,
+      maxLines: 1,
       style: AppStyles.textStyles['h14']
           ?.copyWith(color: AppColors.whiteColor, fontSize: fontSize),
       textAlign: align,

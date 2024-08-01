@@ -48,17 +48,17 @@ class _BottomNavState extends State<BottomNav> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            backgroundColor: AppColors.lightBgColor,
+              backgroundColor: AppColors.lightBgColor,
               icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
               label: "Search"),
           BottomNavigationBarItem(
-            backgroundColor: AppColors.lightBgColor,
+              backgroundColor: AppColors.lightBgColor,
               icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
               label: "Ticket"),
           BottomNavigationBarItem(
-            backgroundColor: AppColors.lightBgColor,
+              backgroundColor: AppColors.lightBgColor,
               icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
               label: "Profile"),

@@ -22,8 +22,8 @@ class Tabs extends StatelessWidget {
         splashColor: AppColors.transparent,
         onTap: onPress,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.linear,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.linear,
             height: 40,
             decoration: BoxDecoration(
                 color:

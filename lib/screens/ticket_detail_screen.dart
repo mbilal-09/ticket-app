@@ -9,7 +9,6 @@ class TicketDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CounterModel counterModel = Provider.of<CounterModel>(context);
-
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,9 +27,11 @@ class TicketDetailScreen extends StatelessWidget {
                     counterModel.increment();
                   },
                   child: const Text('+')),
-                  const SizedBox(width: 10,),
+              const SizedBox(
+                width: 10,
+              ),
               TextButton(
-                style: ButtonStyle(
+                  style: ButtonStyle(
                       backgroundColor:
                           WidgetStateProperty.all(AppColors.primaryColor),
                       foregroundColor:
