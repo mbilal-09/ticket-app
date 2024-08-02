@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_app/base/bottom_nav.dart';
 import 'package:ticket_app/base/utils/routes.dart';
 import 'package:ticket_app/provider/counter_provider.dart';
+import 'package:ticket_app/requests/requests.dart';
 import 'package:ticket_app/screens/hotel_screen.dart';
 import 'package:ticket_app/screens/ticket_screen.dart';
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<CounterModel>(
             create: (context) => CounterModel()),
+        ChangeNotifierProvider<PostData>(create: (context) => PostData()),
       ],
       child: const Main(),
     );

@@ -41,6 +41,7 @@ class _SearchScreenState extends State<SearchScreen>
   int itemCount = 2;
 
   bool isExpanded = false;
+  bool isAnimation = false;
 
   void onPressCart() {
     setState(() {
@@ -85,6 +86,13 @@ class _SearchScreenState extends State<SearchScreen>
     listController.forward();
   }
 
+  void handleAnimated() {
+    setState(() {
+      print(isAnimation);
+      isAnimation = !isAnimation;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,6 +102,7 @@ class _SearchScreenState extends State<SearchScreen>
             const EdgeInsets.only(top: 50, left: 10, right: 10, bottom: 10),
         children: [
           FadeAnimation(
+            isAnimation: isAnimation,
             duration: 1000,
             child: SlideTransition(
               position: slideAnimation,
@@ -145,7 +154,7 @@ class _SearchScreenState extends State<SearchScreen>
                       WidgetStateProperty.all(AppColors.primaryColor),
                   shape: WidgetStateProperty.all(const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))))),
-              onPressed: () => {},
+              onPressed: () => {handleAnimated()},
               child: Center(
                 child: Text(
                   activeTitle == 'flights' ? 'Find Flights' : "Find Hotels",
